@@ -1,8 +1,8 @@
 <template>
    <div>
-    <v-toolbar app fixed>
-      <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn flat to="/" > Home</v-btn>
+    <v-toolbar flat app fixed>
+      <v-toolbar-items>
+          <v-btn class="btn-normal " v-for="(item, index) in boards" :key="index" flat :to="item.to" > /{{item.name}}/</v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-side-icon @click="changeTheme">
@@ -23,6 +23,20 @@ export default {
   },
   data () {
     return {
+      boards: [
+        {
+          name: 'a',
+          to: 'a'
+        },
+        {
+          name: 'b',
+          to: 'b'
+        },
+        {
+          name: 'smroot',
+          to: 'smroot'
+        }
+      ]
     }
   },
   methods: {
@@ -37,6 +51,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.btn-normal {
+  text-transform: none;
+}
 </style>
