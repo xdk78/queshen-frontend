@@ -1,6 +1,8 @@
 <template>
   <div>
-    board {{$route.params.name}}
+    <p class="display-1 text-md-center">
+    Board {{$route.params.name}}
+    </p>
     <feed></feed>
   </div>
 </template>
