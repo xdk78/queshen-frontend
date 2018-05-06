@@ -5,15 +5,20 @@ import App from './App'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
+import firebaseee from './plugins/firebase'
+import config from './config'
+import firebase from 'firebase'
+import 'firebase/firestore'
+firebase.initializeApp(config)
+export const db = firebase.firestore()
 
 Vue.config.productionTip = false
-
-store.dispatch('LOAD_AUTH_FROM_LOCAL_STORAGE')
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
+  firebaseee,
   vuetify,
   components: { App },
   template: '<App/>'

@@ -7,8 +7,6 @@
                 <v-form ref="form" v-model="valid" lazy-validation>
                 <v-text-field
                 v-model="name"
-                :rules="nameRules"
-                :counter="30"
                 label="Title"
                 required
                 ></v-text-field>
@@ -44,6 +42,7 @@
 </template>
 
 <script>
+import { db } from '../main'
 import Post from '@/components/Post'
 import PictureInput from 'vue-picture-input'
 export default {
@@ -51,18 +50,30 @@ export default {
   components: { Post, PictureInput },
   data () {
     return {
-      posts: [
-        {
-          id: 0,
-          content: 'super content 1'
-        },
-        {
-          id: 1,
-          content: 'xd super content 2'
-        }
-      ]
+      posts: [],
+      image: '',
+      name: '',
+      valid: null
     }
   },
+  firestore () {
+    return {
+      posts: db.collection('posts')
+    }
+  },
+  // created () {
+  //   db.collection('posts').get().then(query => {
+  //     query.forEach(doc => {
+  //       const data = {
+  //         id: doc.id,
+  //         postId: doc.data().id,
+  //         title: doc.data().title,
+  //         content: doc.data().content
+  //       }
+  //       this.posts.push(data)
+  //     })
+  //   })
+  // },
   methods: {
     onChange (image) {
       console.log('New picture selected!')
