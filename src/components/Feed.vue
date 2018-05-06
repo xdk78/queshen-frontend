@@ -46,10 +46,10 @@
 
 <script>
 import Post from '@/components/Post'
-
+import PictureInput from 'vue-picture-input'
 export default {
   name: 'Feed',
-  components: { Post },
+  components: { Post, PictureInput },
   data () {
     return {
       posts: [
@@ -63,20 +63,6 @@ export default {
         }
       ]
     }
-  }
-}
-</script>
-
-<script>
-import PictureInput from 'vue-picture-input'
-export default {
-  name: 'app',
-  data () {
-    return {
-    }
-  },
-  components: {
-    PictureInput
   },
   methods: {
     onChange (image) {

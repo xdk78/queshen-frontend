@@ -1,6 +1,6 @@
 <template>
    <div>
-    <v-toolbar flat app fixed>
+    <v-toolbar flat>
       <v-toolbar-items>
           <v-btn class="btn-normal " v-for="(item, index) in boards" :key="index" flat :to="item.to" > /{{item.name}}/</v-btn>
       </v-toolbar-items>
