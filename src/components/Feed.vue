@@ -31,8 +31,7 @@
                 drag: 'Drag image here'
       }">
     </picture-input>
-                <v-btn depressed color="primary">Submit</v-btn>
-                <v-btn depressed color="error" @click="clear">clear</v-btn>
+                  <v-btn flat color="primary">Submit</v-btn>
                 </v-form>
               </v-flex>
             </v-layout>
