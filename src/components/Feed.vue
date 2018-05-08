@@ -58,22 +58,9 @@ export default {
   },
   firestore () {
     return {
-      posts: db.collection('posts')
+      posts: db.collection('posts').orderBy('createdAt')
     }
   },
-  // created () {
-  //   db.collection('posts').get().then(query => {
-  //     query.forEach(doc => {
-  //       const data = {
-  //         id: doc.id,
-  //         postId: doc.data().id,
-  //         title: doc.data().title,
-  //         content: doc.data().content
-  //       }
-  //       this.posts.push(data)
-  //     })
-  //   })
-  // },
   methods: {
     onChange (image) {
       console.log('New picture selected!')
