@@ -1,3 +1,3 @@
 import Vue from 'vue'
-import VueFire from 'vuefire'
-export default Vue.use(VueFire)
+import VueFirestore from 'vue-firestore'
+export default Vue.use(VueFirestore)

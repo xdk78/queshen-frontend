@@ -5,12 +5,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
-import firebaseee from './plugins/firebase'
+import vueFirestore from './plugins/firebase'
 import config from './config'
-import firebase from 'firebase'
+import Firebase from 'firebase'
 import 'firebase/firestore'
-firebase.initializeApp(config)
-export const db = firebase.firestore()
+const firebaseApp = Firebase.initializeApp(config)
+export const db = firebaseApp.firestore()
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
@@ -18,8 +18,8 @@ new Vue({
   el: '#app',
   router,
   store,
-  firebaseee,
   vuetify,
+  vueFirestore,
   components: { App },
   template: '<App/>'
 })

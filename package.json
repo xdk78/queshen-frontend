@@ -16,6 +16,7 @@
     "firebase": "^4.13.1",
     "vue": "^2.5.16",
     "vue-axios": "^2.1.1",
+    "vue-firestore": "^0.2.7",
     "vue-picture-input": "^2.1.6",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5",
@@ -83,5 +84,10 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "webpack": {
+    "whiteListedModules": [
+      "firebase"
+    ]
+  }
 }
