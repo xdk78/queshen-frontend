@@ -2,7 +2,7 @@
   <v-card class="my-1">
     <v-card-text>
         <div class="grey--text" >
-          Anonymous <span class="black--text" >{{post.title}}</span>
+          Anonymous <span class="black--text" ><b>{{post.title.toUpperCase()}}</b></span>
         </div>
         <v-spacer />
         <p class="mt-3">

@@ -2,7 +2,8 @@
    <div>
     <v-toolbar flat>
       <v-toolbar-items>
-          <v-btn class="btn-normal " v-for="(item, index) in boards" :key="index" flat :to="item.to" > /{{item.name}}/</v-btn>
+        <v-btn flat to='/'>Home</v-btn>
+          <v-btn class="btn-normal" v-for="(item, index) in boards" :key="index" flat :to="item.to" > /{{item.name}}/</v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-side-icon @click="changeTheme">
