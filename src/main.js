@@ -5,10 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
-import VueFirestore from 'vue-firestore'
+import vueFirestore from './plugins/vueFirestore'
 
 Vue.config.productionTip = false
-Vue.use(VueFirestore)
 
 /* eslint-disable no-new */
 new Vue({
@@ -16,6 +15,7 @@ new Vue({
   router,
   store,
   vuetify,
+  vueFirestore,
   components: { App },
   template: '<App/>'
 })
