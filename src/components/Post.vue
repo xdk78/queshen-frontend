@@ -17,9 +17,9 @@
 import {format} from 'date-fns'
 export default {
   name: 'Post',
-  props: ['post'],
-  data () {
-    return {
+  props: {
+    post: {
+      type: Object
     }
   },
   methods: {

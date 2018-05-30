@@ -41,7 +41,7 @@
         <v-card-actions>
         </v-card-actions>
       </v-card>
-    <post v-for="post in posts" :key="post.id" :post="post"></post>
+    <post v-if="posts" v-for="post in posts" :key="post.id" :post="post"></post>
   </div>
 </template>
 
@@ -51,10 +51,17 @@ import Post from '@/components/Post'
 // import PictureInput from 'vue-picture-input'
 export default {
   name: 'Feed',
+  props: {
+    posts: {
+      type: Array
+    },
+    docKey: {
+      type: String
+    }
+  },
   components: { Post },
   data () {
     return {
-      posts: [],
       image: '',
       valid: true,
       title: '',
@@ -67,18 +74,16 @@ export default {
       ]
     }
   },
-  firestore () {
-    return {
-      posts: db.collection('posts').orderBy('timestamp', 'desc')
-    }
-  },
   methods: {
     createPost () {
       if (this.$refs.form.validate()) {
-        db.collection('posts').add({
-          title: this.title,
-          content: this.content,
-          timestamp: new Date()
+        const ref = db.collection('boards').doc(this.docKey)
+        ref.update({
+          posts: [...this.posts, {
+            title: this.title,
+            content: this.content,
+            timestamp: new Date()
+          }]
         })
       }
     }
